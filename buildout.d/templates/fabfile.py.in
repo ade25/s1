@@ -20,30 +20,13 @@ env.code_root = '/opt/webserver/buildout.webserver'
 env.host_root = '/opt/sites'
 
 env.hosts = ['${fabric:host}']
-env.hosted_sites = [
-    '${sites:zope1}',
-    '${sites:zope2}',
-    '${sites:zope3}',
-    '${sites:zope4}',
-    '${sites:zope5}',
-    '${sites:zope6}',
-]
-
-env.hosted_sites_locations = [
-    '/opt/sites/${sites:zope1}/buildout.${sites:zope1}',
-    '/opt/zope/${sites:zope2}/',
-    '/opt/zope/${sites:zope3}/',
-    '/opt/zope/${sites:zope4}/',
-    '/opt/zope/${sites:zope5}/',
-    '/opt/sites/${sites:zope6}/buildout.${sites:zope6} ',
-]
 
 
 @task
 def restart():
     """ Restart all """
     with cd(env.webserver):
-        run('nice bin/supervisorctl restart all')+
+        run('nice bin/supervisorctl restart all')
 
 
 @task
