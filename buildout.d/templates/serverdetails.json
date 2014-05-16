@@ -73,6 +73,12 @@
       "type": "static",
       "port": "80",
       "url": "${hosts:static12}"
+    },
+    {
+      "title": "${sites:static13}",
+      "type": "static",
+      "port": "80",
+      "url": "${hosts:static13}"
     }
   ]
 }
