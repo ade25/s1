@@ -19,8 +19,7 @@ Provided services:
 ------------------
 
 * Nginx (Port 80)
-* Varnish (Port 8100)
-* haproxy (Port 8200)
+* Varnish (Port 8100) - currently disabled
 * runscript
 * logrotation
 * supervisord (controlling the isntalled zope instances)
@@ -47,33 +46,15 @@ In order to extend this buildout and add an additional site, follow these steps:
 Update deployment.cfg
 ---------------------
 
-1. Add a new variable/hostname pair to the *[hosts]* part, e.g.
+Add a new variable/hostname pair to the *[hosts]* part, e.g.
 
 ```
-zope1   = example.tld
-zope1-1  = example2.tld 
+static1   = example.tld
+static1-1  = example2.tld 
 ```
 
-Note that additional domains can be added, though you should stick to the
-convention of using one main hostname per site (search engines will love this)
 
-2. Add corresponding zope instance port to *[ports]*
-
-```
-zope1   = 8401
-```
-
-3. Update the *[supervisor]* configuration
-
-```
-40 instance-${sites:zope1}      ${zope-locations:zope1}/bin/instance [console] true ${users:zope-process}
-```
-
-Note: if you add a new site you can just copy the last line and update
-the variable number
-
-
-Add new virtual host to "${buildout:directory}/etc/vhosts/"
+Add new virtual host to "${buildout:directory}/vhosts/"
 -----------------------------------------------------------
 
 Copy the existing *example.tld* file and replace the *zopeX* variable with the 
@@ -90,42 +71,19 @@ configuration file compilation
 ```
 [buildout]
 vhosts-parts =
-    vhost-zopeX
+    vhost-staticX
     ...
 
-[zope-locations]
+[site-locations]
 zopeX         = /opt/sites/${sites:zopeX}/buildout.${sites:zopeX}
 ...
 
-[vhost-zopeX]
+[vhost-staticX]
 recipe = collective.recipe.template
 input = ${locations:templates}/${sites:zopeX}.conf
 output =
 ```
 
-Update "/buildout.d/templates/haproxy.conf"
--------------------------------------------
-
-Configure the load balancer to now inlcude the newly added site, by copying
-the relevant parts in the configuration
-
-```
-acl ${sites:zopeX}_cluster url_sub ${hosts:zopeX}
-...
-acl ${sites:zopeX}_cluster_up nbsrv(${sites:zopeX}) gt 0
-...
-use_backend ${sites:zopeX} if ${sites:zopeX}_cluster_up ${sites:zopeX}_cluster
-```
-
-Prepare the new backend that proxies to the Zope instanz, by copying an
-existing backend part
-
-```
-backend ${sites:zopeX}
-    balance leastconn
-    rspadd X-Cluster:\ default
-    server ${sites:zopeX}  ${hosts:main}:${ports:zopeX} check rise 1 weight 50 maxconn 4
-```
 
 Update "/buildout.d/templates/nginx.conf"
 -----------------------------------------
