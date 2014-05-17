@@ -91,6 +91,12 @@
       "type": "static",
       "port": "80",
       "url": "${hosts:static15}"
+    },
+    {
+      "title": "${sites:static16}",
+      "type": "static",
+      "port": "80",
+      "url": "${hosts:static16}"
     }
   ]
 }
