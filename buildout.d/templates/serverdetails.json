@@ -199,6 +199,12 @@
       "type": "static",
       "port": "80",
       "url": "${hosts:static33}"
+    },
+    {
+      "title": "${sites:static34}",
+      "type": "static",
+      "port": "80",
+      "url": "${hosts:static34}"
     }
   ]
 }
