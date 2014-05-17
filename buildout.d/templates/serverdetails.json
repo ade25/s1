@@ -181,6 +181,24 @@
       "type": "static",
       "port": "80",
       "url": "${hosts:static30}"
+    },
+    {
+      "title": "${sites:static31}",
+      "type": "static",
+      "port": "80",
+      "url": "${hosts:static31}"
+    },
+    {
+      "title": "${sites:static32}",
+      "type": "static",
+      "port": "80",
+      "url": "${hosts:static32}"
+    },
+    {
+      "title": "${sites:static33}",
+      "type": "static",
+      "port": "80",
+      "url": "${hosts:static33}"
     }
   ]
 }
