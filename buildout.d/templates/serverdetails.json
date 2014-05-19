@@ -1,5 +1,5 @@
 {
-  "server": "6zu1",
+  "server": "s1",
   "servername": "${hosts:public}",
   "sites": [
     {
@@ -217,6 +217,12 @@
       "type": "static",
       "port": "80",
       "url": "${hosts:static36}"
+    },
+    {
+      "title": "${sites:static37}",
+      "type": "static",
+      "port": "80",
+      "url": "${hosts:static37}"
     }
   ]
 }
