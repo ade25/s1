@@ -250,6 +250,18 @@
       "type": "static",
       "port": "80",
       "url": "${hosts:static41}"
+    },
+    {
+      "title": "${sites:static42}",
+      "type": "static",
+      "port": "80",
+      "url": "${hosts:static42}"
+    },
+    {
+      "title": "${sites:static43}",
+      "type": "static",
+      "port": "80",
+      "url": "${hosts:static43}"
     }
   ]
 }
