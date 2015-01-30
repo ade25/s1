@@ -147,8 +147,6 @@ $ git pull
 $ bin/buildout -N -c deployment.cfg
 $ bin/supervisorctl reread
 $ bin/supervisorctl update
-$ bin/supervisorctl start instance-zopeX
-$ bin/supervisorctl restart haproxy
 $ bin/supervisorctl restart nginx
 
 ```
