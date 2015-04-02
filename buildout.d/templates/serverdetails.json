@@ -286,6 +286,12 @@
       "type": "static",
       "port": "80",
       "url": "${hosts:static47}"
+    },
+    {
+      "title": "${sites:static48}",
+      "type": "static",
+      "port": "80",
+      "url": "${hosts:static48}"
     }
   ]
 }
