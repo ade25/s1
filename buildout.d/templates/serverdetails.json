@@ -132,12 +132,6 @@
       "url": "${hosts:static21}"
     },
     {
-      "title": "${sites:static22}",
-      "type": "static",
-      "port": "80",
-      "url": "${hosts:static22}"
-    },
-    {
       "title": "${sites:static23}",
       "type": "static",
       "port": "80",
