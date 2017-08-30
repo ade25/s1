@@ -7,7 +7,7 @@
   "sites": [
     {
       "title": "${site1:sitename}",
-      "type": "plone",
+      "type": "static",
       "port": "${site1:zope-port}",
       "url": "${site1:servername}"
     },
