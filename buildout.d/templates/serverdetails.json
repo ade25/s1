@@ -100,6 +100,126 @@
       "type": "plone",
       "port": "${site16:zope-port}",
       "url": "${site16:servername}"
+    },
+    {
+      "title": "${site17:sitename}",
+      "type": "plone",
+      "port": "${site17:zope-port}",
+      "url": "${site17:servername}"
+    },
+    {
+      "title": "${site18:sitename}",
+      "type": "plone",
+      "port": "${site18:zope-port}",
+      "url": "${site18:servername}"
+    },
+    {
+      "title": "${site19:sitename}",
+      "type": "plone",
+      "port": "${site19:zope-port}",
+      "url": "${site19:servername}"
+    },
+    {
+      "title": "${site20:sitename}",
+      "type": "plone",
+      "port": "${site20:zope-port}",
+      "url": "${site20:servername}"
+    },
+    {
+      "title": "${site21:sitename}",
+      "type": "plone",
+      "port": "${site21:zope-port}",
+      "url": "${site21:servername}"
+    },
+    {
+      "title": "${site22:sitename}",
+      "type": "plone",
+      "port": "${site22:zope-port}",
+      "url": "${site22:servername}"
+    },
+    {
+      "title": "${site23:sitename}",
+      "type": "plone",
+      "port": "${site23:zope-port}",
+      "url": "${site23:servername}"
+    },
+    {
+      "title": "${site24:sitename}",
+      "type": "plone",
+      "port": "${site24:zope-port}",
+      "url": "${site24:servername}"
+    },
+    {
+      "title": "${site25:sitename}",
+      "type": "plone",
+      "port": "${site25:zope-port}",
+      "url": "${site25:servername}"
+    },
+    {
+      "title": "${site26:sitename}",
+      "type": "plone",
+      "port": "${site26:zope-port}",
+      "url": "${site26:servername}"
+    },
+    {
+      "title": "${site27:sitename}",
+      "type": "plone",
+      "port": "${site27:zope-port}",
+      "url": "${site27:servername}"
+    },
+    {
+      "title": "${site28:sitename}",
+      "type": "plone",
+      "port": "${site28:zope-port}",
+      "url": "${site28:servername}"
+    },
+    {
+      "title": "${site29:sitename}",
+      "type": "plone",
+      "port": "${site29:zope-port}",
+      "url": "${site29:servername}"
+    },
+    {
+      "title": "${site30:sitename}",
+      "type": "plone",
+      "port": "${site30:zope-port}",
+      "url": "${site30:servername}"
+    },
+    {
+      "title": "${site31:sitename}",
+      "type": "plone",
+      "port": "${site31:zope-port}",
+      "url": "${site31:servername}"
+    },
+    {
+      "title": "${site32:sitename}",
+      "type": "plone",
+      "port": "${site32:zope-port}",
+      "url": "${site32:servername}"
+    },
+    {
+      "title": "${site33:sitename}",
+      "type": "plone",
+      "port": "${site33:zope-port}",
+      "url": "${site33:servername}"
+    },
+    {
+      "title": "${site34:sitename}",
+      "type": "plone",
+      "port": "${site34:zope-port}",
+      "url": "${site34:servername}"
+    },
+    {
+      "title": "${site35:sitename}",
+      "type": "plone",
+      "port": "${site35:zope-port}",
+      "url": "${site35:servername}"
+    },
+    {
+      "title": "${site36:sitename}",
+      "type": "plone",
+      "port": "${site36:zope-port}",
+      "url": "${site36:servername}"
     }
   ]
 }
