@@ -310,6 +310,12 @@
       "type": "plone",
       "port": "${site50:zope-port}",
       "url": "${site50:servername}"
+    },
+    {
+      "title": "${site51:sitename}",
+      "type": "plone",
+      "port": "${site51:zope-port}",
+      "url": "${site51:servername}"
     }
   ]
 }
