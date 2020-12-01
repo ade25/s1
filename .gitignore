@@ -10,6 +10,7 @@ coverage
 downloads
 eggs
 fake-eggs
+lib
 parts
 dist
 .installed.cfg
