@@ -29,6 +29,7 @@ etc/vhosts/*.conf
 htdocs/*.json
 src/ade25.*
 fabfile.py
+!build/fabfile.py
 known-good-versions.cfg
 .DS_Store
 .Python
