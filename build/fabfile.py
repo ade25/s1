@@ -17,14 +17,14 @@ env.use_ssh_config = True
 env.forward_agent = True
 env.port = '22222'
 env.user = 'root'
-env.hostname = 's1'
+env.hostname = 'static'
 env.code_user = 'root'
 env.prod_user = 'www'
 env.webserver = '/opt/services'
 env.code_root = '/opt/services'
 env.host_root = '/opt/services'
 
-env.hosts = ['s1.ade25.de']
+env.hosts = ['static.ade25.de']
 env.hosted_sites = {
 }
 

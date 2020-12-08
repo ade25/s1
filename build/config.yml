@@ -28,6 +28,5 @@ modules:
           workdir: /app/theme
           bin: jekyll
           service: jekyll
-  pipenv:
   npm:
-    base_path: ../src/hph.sitetheme/hph/sitetheme/resources
+    base_path: ../theme

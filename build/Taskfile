@@ -15,22 +15,18 @@ task:install() {
         echo ""
         b5:abort "Argument missing: buildout profile file"
     fi
-    cd .. && chmod 775 ./bootstrap.sh && ./bootstrap.sh $1
+    cd .. && chmod 775 ./bootstrap.sh && ./bootstrap.sh -c developement.cfg
     virtualenv:install
-    docker:install
     #task:setup
     #docker:command:npm install
 }
 
-task:install:theme() {
-    task:setup
-    docker:command:npm install
+task:install:build() {
+    virtualenv:install
 }
 
 task:update() {
     virtualenv:update
-    docker:update
-    docker:command:npm install
 }
 
 task:update:theme() {
@@ -77,89 +73,18 @@ task:build:full() {
     cd ../ && bin/buildout -c development.cfg
 }
 
-task:plone() {
-    cd ../ && bin/instance-debug fg
-}
-
-task:css() {
-    docker:command:gulp styles
-}
-
-task:gulp() {
-    #cd ${SITE_THEME} && npm:run gulp "$@"
-    #cd ..
-    docker:command:gulp "$@"
-}
-
-task:gulp:tasks() {
-    docker:command:gulp --tasks
-}
-
-task:watch() {
-    virtualenv:run fab watch
-}
-
-
-task:theme:html() {
-    docker:command:jekyll build -q
-    echo ""
-    echo "[theme] HTML build done"
-}
-
-task:theme:css() {
-    docker:command:gulp styles
-}
-
-task:theme:js() {
-    docker:command:gulp collect:scripts:app
-}
-
-task:theme:assets() {
-    docker:command:gulp collect
-}
-
-task:theme:sprite() {
-    docker:command:gulp sprite:collect
-}
-
-task:theme:dist() {
-    docker:command:jekyll build -q
-    docker:command:gulp dist
-}
-
 task:fab() {
     virtualenv:run fab "$@"
 }
 
-task:npm() {
-    docker:command:npm "$@"
-}
-
-task:jekyll() {
-    docker:command:jekyll "$@"
-}
-
-# docker
-task:run() {
-    docker:docker-compose up "$@"
-}
-
-task:halt() {
-    docker:docker-compose down "$@"
-}
-
-task:shell() {
-    docker:container_run web /bin/bash --login
-}
-
-task:db:download() {
-    if [ -z "${1:-}" ]
+task:cert() {
+  if [ -z "${1:-}" ]
     then
-        echo "Usage: b5 download <servername> [options]"
+        echo "Usage: b5 cert <domainname> [options]"
         echo ""
-        b5:abort "Argument missing: server name"
+        b5:abort "Argument missing: domain name"
     fi
-    virtualenv:run fab "$1" download:"${2:-}"
+  virtualenv:run fab add_cert:"$@"
 }
 
 task:ctl() {

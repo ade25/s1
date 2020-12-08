@@ -9,6 +9,7 @@ fabdeploit = "*"
 Fabric = "*"
 
 [dev-packages]
+ade25.fabfiles = {git = "https://github.com/ade25/ade25.fabfiles.git", editable = true}
 
 [requires]
 python_version = "2.7"
