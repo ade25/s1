@@ -9,13 +9,7 @@ task:setup() {
 }
 
 task:install() {
-    if [ -z "${1:-}" ]
-    then
-        echo "Usage: b5 install <buildout-profile> [options]"
-        echo ""
-        b5:abort "Argument missing: buildout profile file"
-    fi
-    cd .. && chmod 775 ./bootstrap.sh && ./bootstrap.sh -c developement.cfg
+    cd .. && chmod 775 ./bootstrap.sh && ./bootstrap.sh -c development.cfg
     virtualenv:install
     #task:setup
     #docker:command:npm install
